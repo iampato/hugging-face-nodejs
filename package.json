@@ -1,0 +1,14 @@
+{
+  "name": "hugging-face-nodejs",
+  "version": "1.0.0",
+  "description": "Testing out if I can run hugging face models on nodejs",
+  "main": "src/index.js",
+  "author": "Patrick Waweru",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/index.mjs"
+  },
+  "dependencies": {
+    "@huggingface/transformers": "^3.7.5"
+  }
+}

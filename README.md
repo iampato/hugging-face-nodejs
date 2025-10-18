@@ -4,22 +4,6 @@ A Node.js project for generating **text and image embeddings** and transforming 
 
 ---
 
-## Table of Contents
-
-- [Overview](#overview)  
-- [Features](#features)  
-- [Installation](#installation)  
-- [Usage](#usage)  
-  - [Build User Profile Text](#build-user-profile-text)  
-  - [Generate Text Prompt](#generate-text-prompt)  
-  - [Text Embedding](#text-embedding)  
-  - [Image Embedding](#image-embedding)  
-- [Supported Models](#supported-models)  
-- [Performance Notes](#performance-notes)  
-- [License](#license)  
-
----
-
 ## Overview
 
 This project demonstrates how to use Hugging Face Transformers in Node.js for:

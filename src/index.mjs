@@ -29,12 +29,6 @@ function buildUserProfileText({ bio, interests = [] }) {
     return `User dating profile, Bio:${bio}. ${interestsText}`.trim();
 }
 
-// function buildUserProfileText({ bio, interests = [] }) {
-//     const instruction = "Turn this into a short, funny, and engaging dating bio:";
-//     const user_input = `Raw Bio: "${bio}". Interests: ${interests.join(', ')}.`;
-//     return `${instruction} ${user_input}`.trim();
-// }
-
 // for text embedding I want a prompt generator that takes:
 /*
 {
@@ -144,14 +138,17 @@ const generatedPromptText = await generatePrompt({
 });
 console.timeEnd("Total Text time");
 console.log("generatedPromptText:", generatedPromptText);
-// console.log("Embedding Text result:", extractEmbedding(textEmbeddingResult));
 
-// console.time("Total Image time");
-// const imageXenovaEmbeddingResult = await getImageEmbedding(
-//     {
-//         modelId: "Xenova/clip-vit-base-patch32",
-//         imageUrl: "https://blog.photofeeler.com/wp-content/uploads/2016/06/good-dating-app-selfie-woman.jpeg",
-//     }
-// );
-// // console.timeEnd("Total Image time");
-// console.log("imageXenovaEmbeddingResult: ", extractEmbedding(imageXenovaEmbeddingResult));
+const textEmbeddingResult = await getTextEmbedding({
+    modelId: "sentence-transformers/all-MiniLM-L6-v2",
+    params: userProfileText,
+});
+console.log("Embedding Text result:", extractEmbedding(textEmbeddingResult));
+
+const imageXenovaEmbeddingResult = await getImageEmbedding(
+    {
+        modelId: "Xenova/clip-vit-base-patch32",
+        imageUrl: "https://blog.photofeeler.com/wp-content/uploads/2016/06/good-dating-app-selfie-woman.jpeg",
+    }
+);
+console.log("imageXenovaEmbeddingResult: ", extractEmbedding(imageXenovaEmbeddingResult));

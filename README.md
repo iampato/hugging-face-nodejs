@@ -1,4 +1,3 @@
-````markdown
 # Hugging Face Node.js
 
 A Node.js project for generating **text and image embeddings** and transforming user profiles into engaging dating bios using Hugging Face models.
